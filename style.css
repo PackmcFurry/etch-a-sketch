@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.block{
+    background-color: black;
+    border: 1px solid white;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 650px;
+    height: 650px;
+    flex: 1 1 auto;
+    align-items: stretch;
+    padding: 1px;
+    margin: 10px;
+}
