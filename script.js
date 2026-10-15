@@ -2,6 +2,7 @@ const container = document.querySelector("div#container")
 const slider = document.getElementById("nBlocks")
 const sliderNum = document.getElementById("val")
 const colorRandomizer = document.querySelector("input#randomColor")
+const opacityValue = document.querySelector("input#opacity")
 
 slider.addEventListener("input", () => sliderNum.textContent = slider.value)
 
@@ -14,24 +15,36 @@ function createGrid(tSquares, nSquares){
         let sizeSquare = 100/nSquares
 
         let blockColor = getRandomColor()
-        block.setAttribute("style", `width:${sizeSquare}%;`)
+        let currentOpacity = 0
+        block.style.width = `${sizeSquare}%`
         block.classList.add("block")
 
-        block.addEventListener("mouseover", () => colorize(block,sizeSquare,blockColor))
+        block.addEventListener("mouseover", () => {colorize(block,sizeSquare,blockColor) , opacityChanger(block)})
 
         container.appendChild(block)
     }   
 }
 
 function colorize(BL,SS,BC){
-    let blockColor = getRandomColor()
     if (colorRandomizer.checked == true){
-        BL.setAttribute("style", `background-color: ${BC}; width:${SS}%;`);
+        BL.style.backgroundColor = `${BC}`;
+        BL.style.width = `${SS}`
     } else {
-        BL.setAttribute("style", `background-color: gray; width:${SS}%`);
+        BL.style.backgroundColor = `gray`
+        BL.style.width = `${SS}`
     }
 }
 
+function opacityChanger (BL){
+    if (opacityValue.checked == true){
+        let currentOpacity = BL.style.opacity
+        currentOpacity = Number(currentOpacity) + 0.1
+        BL.style.opacity = `${currentOpacity}`
+        console.log(BL.style.opacity)
+    } else {
+        BL.style.opacity = `1`
+    }
+}
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
     let color = '#';
