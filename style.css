@@ -4,6 +4,35 @@
     box-sizing: border-box;
 }
 
+header{
+    background-image: linear-gradient(180deg, gray, rgb(60, 60, 60));
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.399);
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    width: 310px;
+}
+
+#menu{
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+button{
+    font-size: 2em;
+    width: 100px;
+}
+
+body{
+    background-color: gray;
+}
+
 .block{
     background-color: black;
     border: 1px solid white;
@@ -19,4 +48,7 @@
     align-items: stretch;
     padding: 1px;
     margin: 10px;
+    background-color: white;
+    margin: auto;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.401);
 }

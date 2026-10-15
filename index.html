@@ -8,19 +8,25 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div>
-        <label for="nBlocks">Blocks</label>
-        <input type="range" id="nBlocks" min="1" max="100" value="16"  autocomplete="off">
-        <output id="val">16</output>
-    </div>
+    <header>
+        <h1>Etch-A-Sketch</h1>
 
-    <div>
-        <label for="randomColor">Random Colors:</label>
-        <input type="checkbox" name="randomColor" id="randomColor">
+        <button id="reset">Reset</button>
 
-        <label for="opacity">Opacity changer:</label>
-        <input type="checkbox" name="opacity" id="opacity">
-    </div>
+        <div id="menu">
+            <div>
+                <label for="nBlocks">Blocks</label>
+                <input type="range" id="nBlocks" min="1" max="100" value="16"  autocomplete="off">
+                <output id="val">16</output>
+            </div>
+            <div>
+                <label for="randomColor">Random Colors:</label>
+                <input type="checkbox" name="randomColor" id="randomColor">
+                <label for="opacity">Opacity changer:</label>
+                <input type="checkbox" name="opacity" id="opacity">
+            </div>
+        </div>
+    </header>
     
     <div id="container">
         

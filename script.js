@@ -3,10 +3,13 @@ const slider = document.getElementById("nBlocks")
 const sliderNum = document.getElementById("val")
 const colorRandomizer = document.querySelector("input#randomColor")
 const opacityValue = document.querySelector("input#opacity")
+const reset = document.querySelector("button#reset")
 
 slider.addEventListener("input", () => sliderNum.textContent = slider.value)
 
 slider.addEventListener("mouseup", () => {let numSquares = slider.value; let totalSquares = numSquares*numSquares; createGrid(totalSquares, numSquares)})
+
+reset.addEventListener("click", () => {numSquares = slider.value; totalSquares = numSquares*numSquares; createGrid(totalSquares, numSquares)})
 
 function createGrid(tSquares, nSquares){
     container.innerHTML = ""
@@ -40,7 +43,6 @@ function opacityChanger (BL){
         let currentOpacity = BL.style.opacity
         currentOpacity = Number(currentOpacity) + 0.1
         BL.style.opacity = `${currentOpacity}`
-        console.log(BL.style.opacity)
     } else {
         BL.style.opacity = `1`
     }
